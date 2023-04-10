@@ -124,5 +124,5 @@ if __name__ == "__main__":
 （2）正式权限开通请咨询中国银河证券营业部<br/>
 # 4.联系方式
 （1）格物官方联系企业微信：<br/>
-![](https://github.com/zhanggao2013/AmazingQuant/blob/master/documents/framework_architecture.jpg)
+![](https://github.com/tgw2023/tgw/blob/main/picture/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%B4%BB%E7%A0%81.png)
 （2）格物官方联系联系邮箱：yhgwjgszhtyfw@chinastock.com.cn<br/>
