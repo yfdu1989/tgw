@@ -4,7 +4,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/tgw2023/tgw.svg?style=social&label=Fork&)](https://github.com/tgw2023/tgw/fork)
 
 # 1.简介
-（1）格物机构金融服务平台提供集数据接入、推送、查询、计算和分析为一体的投研数据解决方案，为机构和高净值个人用户提供市场前沿、可靠、全面、极速的金融数据api服务。 	<br/>
+（1）中国银河证券格物机构金融服务平台提供集数据接入、推送、查询、计算和分析为一体的投研数据解决方案，为机构和高净值个人用户提供市场前沿、可靠、全面、极速的金融数据api服务。 	<br/>
 
 （2）支持Python和C++两种编程语言 	<br/>
 
