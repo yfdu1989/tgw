@@ -120,5 +120,6 @@ if __name__ == "__main__":
 # 3.权限开通
 （1）试用权限开通，可登录官网（http://www.chinastock.com.cn/newsite/cgs-services/strategyTrade/geWuInstitution.html ）自助注册<br/>
 流程如下：<br/>
-
+![](https://github.com/zhanggao2013/AmazingQuant/blob/master/documents/framework_architecture.jpg)
+（2）正式权限开通请咨询中国银河证券营业部<br/>
 # 4.联系方式
