@@ -118,7 +118,7 @@ if __name__ == "__main__":
     DealReplay()
 ```
 # 3.权限开通
-（1）试用权限开通，可登录官网（http://www.chinastock.com.cn/newsite/cgs-services/strategyTrade/geWuInstitution.html）自助注册<br/>
+（1）试用权限开通，可登录官网（http://www.chinastock.com.cn/newsite/cgs-services/strategyTrade/geWuInstitution.html ）自助注册<br/>
 流程如下：<br/>
 
 # 4.联系方式
