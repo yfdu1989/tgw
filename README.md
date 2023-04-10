@@ -32,3 +32,88 @@
 *   实时推送港股通实时额度数据<br> 
 *   实时推送港股通产品状态快照数据<br> 
 *   港股市场波动调节机制(VCM)推送数据<br> 
+
+# 2.Python api调用的主要代码demo
+```python
+# -*- coding: utf-8 -*-
+from tgw import tgw
+import time
+import signal
+
+def Init():
+    cfg = tgw.Cfg()
+
+    # 服务器地址配置
+    cfg.server_vip = "10.4.**.**"
+    cfg.server_port = 9**0
+    # 用户登录账号配置
+    cfg.username = "z***"  # 账号
+    cfg.password = "zd******"  # 密码
+    # 运行模式配置
+    api_mode = tgw.ApiMode.kColocationMode # 设置api模式 托管机房模式
+    # api_mode = tgw.ApiMode.kInternetMode  # 设置api模式 互联网模式
+    if (api_mode == tgw.ApiMode.kColocationMode):
+        cfg.coloca_cfg.channel_mode = tgw.ColocatChannelMode.kQTCP  # tcp查询模式
+        cfg.coloca_cfg.qtcp_channel_thread = 2
+        cfg.coloca_cfg.qtcp_max_req_cnt = 1000
+
+    # 初始化返回错误码，完成登录验证、运行模式设置、传实例到订阅方法三个功能
+    error_code = tgw.IGMDApi_Init(spi, cfg, api_mode)
+    # 如初始化失败，退出流程
+    if error_code != tgw.ErrorCode.kSuccess:
+        print("Init TGW failed")
+        tgw.IGMDApi_Release()
+        exit(-1)
+
+
+def CtrlC(signum, frame):
+    print("bey bey")
+    global g_is_running
+    g_is_running = False
+
+
+if __name__ == "__main__":
+    signal.signal(signal.SIGINT, CtrlC)
+    signal.signal(signal.SIGTERM, CtrlC)
+
+    g_is_running = True
+    # ---------订阅spi实例---------
+    spi = IAMDSpiApp()
+
+    # ---------查询spi实例---------
+    # k线查询spi实例
+    spi_kline = IQueryKlineSpi()
+    # 快照查询spi实例
+    spi_snap = IQuerySnapshotSpi()
+    # 逐笔委托查询spi实例
+    spi_tick_order = IQueryTickOrderSpi()
+    # 逐笔成交spi实例
+    spi_tick_exec = IQueryTickExecutionSpi()
+    # 委托队列spi实例
+    spi_order_queue = IQueryOrderQueueSpi()
+    # 代码表查询spi实例
+    spi_code_table = IQueryCodeTableSpi()
+    # 证券代码信息查询spi实例
+    spi_secur_info = IQuerySecuritiesInfoSpi()
+    # 复权因子表信息查询spi实例
+    spi_ex_factor = IQueryExFactorSpi()
+    # 加工因子查询spi实例
+    spi_factor = IQueryFactorSpi()
+    # 资讯数据查询spi实例
+    spi_third_info = IQueryThirdInfoSpi()
+
+    # ---------回放spi实例---------
+    spi_replay = IReplayApp()
+
+    Init()
+
+    time.sleep(2)
+    # 修改密码
+    HandleUpdatePassword()
+    # 订阅接口
+    DealSub()
+    # 查询接口
+    DealQuery()
+    # 回放接口
+    DealReplay()
+```
